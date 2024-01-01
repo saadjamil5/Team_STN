@@ -37,6 +37,8 @@ namespace NeoCortexApiSample
             //RunMultiSequenceLearningExperiment();
         }
 
+
+
         private static void RunMultiSimpleSequenceLearningExperiment()
         {
             Dictionary<string, List<double>> sequences = new Dictionary<string, List<double>>();
