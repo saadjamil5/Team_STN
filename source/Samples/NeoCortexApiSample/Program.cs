@@ -35,9 +35,7 @@ namespace NeoCortexApiSample
 
 
             //RunMultiSequenceLearningExperiment();
-        }
-
-
+             //Exploring the codde structure
 
         private static void RunMultiSimpleSequenceLearningExperiment()
         {
