@@ -32,12 +32,12 @@ namespace NeoCortexApiSample
             //gridCells.Run();
 
             // RunMultiSimpleSequenceLearningExperiment();
-
+            RunMultiSequenceLearningExperiment();
 
             //RunMultiSequenceLearningExperiment();
-             //Exploring the codde structure
+            //Exploring the codde structure
 
-        private static void RunMultiSimpleSequenceLearningExperiment()
+            private static void RunMultiSimpleSequenceLearningExperiment()
         {
             Dictionary<string, List<double>> sequences = new Dictionary<string, List<double>>();
 
