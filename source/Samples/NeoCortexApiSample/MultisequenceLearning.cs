@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace NeoCortexApiSample
 {
-    /// <summary>
+    // <summary>
     /// Implements an experiment that demonstrates how to learn sequences.
     /// </summary>
     public class MultiSequenceLearning
