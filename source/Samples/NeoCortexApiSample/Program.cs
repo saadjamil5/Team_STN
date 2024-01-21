@@ -10,7 +10,7 @@ namespace NeoCortexApiSample
 {
     class Program
     {
-        /// <summary>
+        ///// <summary>
         /// This sample shows a typical experiment code for SP and TM.
         /// You must start this code in debugger to follow the trace.
         /// and TM.
