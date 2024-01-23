@@ -20,4 +20,10 @@ namespace NeoCortexApiSample
         public Predictor Run(List<Sequence> sequences)
         {
             Console.WriteLine($"Hello NeocortexApi Experiment {nameof(MultiSequenceLearning)}");
-        }
+             int inputBits = 100;
+            int numColumns = 1024;
+
+            HtmConfig cfg = HelperMethods.FetchHTMConfig(inputBits, numColumns);
+            EncoderBase encoder = HelperMethods.GetEncoder(inputBits);
+            return RunExperiment(inputBits, cfg, encoder, sequences);
+       }
