@@ -1,12 +1,25 @@
 ﻿using NeoCortexApi;
 using NeoCortexApi.Encoders;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using static MultiSequenceLearning.MultiSequenceLearning;
+
+namespace ApprovePredictionofMultiSequenceLearning
+{
+    class Program
+    {
+        /// <summary>
+        /// This sample shows a typical experiment code for SP and TM.
+        /// You must start this code in debugger to follow the trace.
+        /// and TM.
+        /// </summary>
+        /// <param name="args"></param>
+        static void Main(string[] args)
+        {
 
 
-// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+        }
+    }
+}
+
