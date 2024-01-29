@@ -1,11 +1,20 @@
-﻿using NeoCortexApi;
+using System;
+using System.Globalization;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NeoCortexApi;
 using NeoCortexApi.Classifiers;
 using NeoCortexApi.Encoders;
 using NeoCortexApi.Entities;
+using NeoCortexApi.Classifiers;
 using NeoCortexApi.Network;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-
-
+using System.Linq;
 
 namespace ApprovePredictionofMultiSequenceLearning
 {
