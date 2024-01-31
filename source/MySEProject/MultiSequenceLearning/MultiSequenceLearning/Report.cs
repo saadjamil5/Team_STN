@@ -13,4 +13,8 @@ namespace MultiSequenceLearning
 
         public string SequenceName { get; set; }
         public int[] SequenceData { get; set; }
-}     
+        public List<string> PredictionLog { get; set; }
+        public double Accuracy { get; set; }
+
+    }
+}
