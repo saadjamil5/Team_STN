@@ -1,24 +1,37 @@
-﻿using NeoCortexApi;
+﻿using MultisequenceLearning;
+using NeoCortexApi;
 using NeoCortexApi.Encoders;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using static MultiSequenceLearning.MultiSequenceLearning;﻿
+using static MultiSequenceLearning.MultiSequenceLearning;
+
 namespace MultiSequenceLearning
 {
     class Program
     {
+        /// <summary>
+        /// This sample shows a typical experiment code for SP and TM.
+        /// You must start this code in debugger to follow the trace.
+        /// and TM.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
-            Dictionary<string, List<double>> sequences = new Dictionary<string, List<double>>();
+            // SE Project: ML22/23-15	Approve Prediction of Multisequence Learning 
 
-            //have to make class for reading data values
+            //to create synthetic dataset
+            /*string path = HelperMethods.SaveDataset(HelperMethods.CreateDataset());
+            Console.WriteLine($"Dataset saved: {path}");*/
 
-            sequences.Add("S1", new List<double>(new double[] { 0.0, 1.0, 2.0, 3.0, 4.0, 2.0, 5.0, }));
-            MultiSequenceLearning experiment = new MultiSequenceLearning();
-            var predictor = experiment.Run(sequences);
+            //to read dataset
+            string BasePath = AppDomain.CurrentDomain.BaseDirectory;
+            string datasetPath = Path.Combine(BasePath, "dataset", "dataset_03.json");
+            Console.WriteLine($"Reading Dataset: {datasetPath}");
+            List<Sequence> sequences = HelperMethods.ReadDataset(datasetPath);
+
 
         }
     }

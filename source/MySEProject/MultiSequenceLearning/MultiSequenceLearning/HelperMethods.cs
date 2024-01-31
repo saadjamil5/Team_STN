@@ -1,8 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Class1
+namespace MultisequenceLearning
 {
-	public Class1()
-	{
-	}
+    internal class HelperMethods
+    {
+        internal static List<Sequence> ReadDataset(string datasetPath)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
