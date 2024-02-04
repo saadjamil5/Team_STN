@@ -32,7 +32,22 @@ namespace MultiSequenceLearning
             Console.WriteLine($"Reading Dataset: {datasetPath}");
             List<Sequence> sequences = HelperMethods.ReadDataset(datasetPath);
 
+            //run learing only
+            RunSimpleMultiSequenceLearningExperiment(sequences);
 
+
+        }
+
+        /// <summary>
+        /// takes input data set and runs the alogrithm
+        /// </summary>
+        /// <param name="sequences">input test dataset</param>
+        private static void RunSimpleMultiSequenceLearningExperiment(List<Sequence> sequences)
+        {
+            //
+            // Prototype for building the prediction engine.
+            MultiSequenceLearning experiment = new MultiSequenceLearning();
+            var predictor = experiment.Run(sequences);
         }
     }
 }
