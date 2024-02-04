@@ -20,7 +20,7 @@ namespace MultiSequenceLearning
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            // SE Project: ML23/24-09	Approve Prediction of Multisequence Learning 
+            // SE Project: ML23/24-9	Approve Prediction of Multisequence Learning 
 
            
             
