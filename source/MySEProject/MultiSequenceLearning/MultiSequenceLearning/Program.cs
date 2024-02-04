@@ -20,15 +20,14 @@ namespace MultiSequenceLearning
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            // SE Project: ML22/23-15	Approve Prediction of Multisequence Learning 
+            // SE Project: ML23/24-09	Approve Prediction of Multisequence Learning 
 
-            //to create synthetic dataset
-            /*string path = HelperMethods.SaveDataset(HelperMethods.CreateDataset());
-            Console.WriteLine($"Dataset saved: {path}");*/
+           
+            
 
             //to read dataset
             string BasePath = AppDomain.CurrentDomain.BaseDirectory;
-            string datasetPath = Path.Combine(BasePath, "dataset", "dataset_03.json");
+            string datasetPath = Path.Combine(BasePath, "dataset", "Dataset1.json");
             Console.WriteLine($"Reading Dataset: {datasetPath}");
             List<Sequence> sequences = HelperMethods.ReadDataset(datasetPath);
 
