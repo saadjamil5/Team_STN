@@ -31,9 +31,12 @@ namespace MultiSequenceLearning
             Console.WriteLine($"Reading Dataset: {datasetPath}");
             List<Sequence> sequences = HelperMethods.ReadDataset(datasetPath);
 
+
+
             //run learing only
             RunSimpleMultiSequenceLearningExperiment(sequences);
 
+            List<Report> reports = RunMultiSequenceLearningExperiment(sequences, sequencesTest);
 
         }
 
@@ -48,5 +51,36 @@ namespace MultiSequenceLearning
             MultiSequenceLearning experiment = new MultiSequenceLearning();
             var predictor = experiment.Run(sequences);
         }
+
+        private static List<Report> RunMultiSequenceLearningExperiment(List<Sequence> sequences, List<Sequence> sequencesTest)
+        {
+            List<Report> reports = new List<Report>();
+            Report report = new Report();
+
+            // Prototype for building the prediction engine.
+            MultiSequenceLearning experiment = new MultiSequenceLearning();
+            var predictor = experiment.Run(sequences);
+
+            // These list are used to see how the prediction works.
+            // Predictor is traversing the list element by element. 
+            // By providing more elements to the prediction, the predictor delivers more precise result.
+
+            foreach (Sequence item in sequencesTest)
+            {
+                report.SequenceName = item.name;
+                Debug.WriteLine($"Using test sequence: {item.name}");
+                Console.WriteLine("------------------------------");
+                Console.WriteLine($"Using test sequence: {item.name}");
+                predictor.Reset();
+                report.SequenceData = item.data;
+                var accuracy = PredictNextElement(predictor, item.data, report);
+                reports.Add(report);
+                Console.WriteLine($"Accuracy for {item.name} sequence: {accuracy}%");
+            }
+
+            return reports;
+
+        }
+
     }
 }

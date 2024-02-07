@@ -9,11 +9,6 @@
     <DocumentationFile></DocumentationFile>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="AkkaDistributedDictionaryBase.cs" />
-    <Compile Remove="DictNodeActor.cs" />
-    <Compile Remove="InMemoryArrayMOVETTORNTITIES.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Include="AkkaDistributedDictionaryBase.cs" />
