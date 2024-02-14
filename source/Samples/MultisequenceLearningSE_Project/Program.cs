@@ -82,7 +82,6 @@ namespace MultiSequenceLearning
             }
 
             return reports;
-
         }
         private static double PredictNextElement(Predictor predictor, int[] list, Report report)
         {
