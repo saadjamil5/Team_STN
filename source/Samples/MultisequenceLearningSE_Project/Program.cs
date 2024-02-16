@@ -22,8 +22,8 @@ namespace MultiSequenceLearning
         {
             // SE Project: ML23/24-09	Approve Prediction of Multisequence Learning 
 
-           
-            
+
+
 
             //to read dataset
             string BasePath = AppDomain.CurrentDomain.BaseDirectory;
@@ -82,8 +82,19 @@ namespace MultiSequenceLearning
             }
 
             return reports;
-
         }
+        private static double PredictNextElement(Predictor predictor, int[] list, Report report)
+        {
+            int matchCount = 0;
+            int predictions = 0;
+            double accuracy = 0.0;
+            List<string> logs = new List<string>();
+            Console.WriteLine("------------------------------");
+
+            int prev = -1;
+            bool first = true;
+        }
+
 
     }
 }
