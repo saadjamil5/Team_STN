@@ -135,7 +135,20 @@ namespace MultiSequenceLearning
 
             // We activate here the Temporal Memory algorithm.
             layer1.HtmModules.Add("tm", tm);
+            
+            //
+            // Loop over all sequences.
+            foreach (var sequenceKeyPair in sequences)
+            {
+                Debug.WriteLine($"-------------- Sequences {sequenceKeyPair.name} ---------------");
+                Console.WriteLine($"-------------- Sequences {sequenceKeyPair.name} ---------------");
 
+                int maxPrevInputs = sequenceKeyPair.data.Length - 1;
+
+                List<string> previousInputs = new List<string>();
+
+                previousInputs.Add("-1");
+
+            }
         }
-    }
 }
