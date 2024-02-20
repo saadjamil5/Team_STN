@@ -17,4 +17,28 @@
     <ProjectReference Include="..\..\NeoCortexUtils\NeoCortexUtils.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Documentation\2nd.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>2nd.txt</DependentUpon>
+    </Compile>
+    <Compile Update="report\first.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>first.txt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Documentation\2nd.txt">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>2nd.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="report\first.txt">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>first.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
 </Project>
