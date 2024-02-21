@@ -58,6 +58,7 @@ namespace MultiSequenceLearning
             };
 
             return cfg;
+            }
             /// <summary>
         /// Takes in user input and return encoded SDR for prediction
         /// </summary>
