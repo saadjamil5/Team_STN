@@ -113,5 +113,4 @@ namespace MultiSequenceLearning
             return sequence;
         }
         }
-    }
 }
