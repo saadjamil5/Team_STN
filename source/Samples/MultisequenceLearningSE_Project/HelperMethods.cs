@@ -59,5 +59,6 @@ namespace MultiSequenceLearning
 
             return cfg;
         }
+
     }
 }
