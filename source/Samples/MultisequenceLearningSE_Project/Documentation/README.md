@@ -220,3 +220,45 @@ public static string SaveDataset(List<Sequence> sequences)
         return reportPath;
 }
 ```
+6. Calculating accuracy in PredictNextElement() in `Program.cs`
+
+![image](./images/approve_prediction.png)
+
+Fig: Predictions and calculating accuracy
+
+```csharp
+int matchCount = 0;
+int predictions = 0;
+double accuracy = 0.0;
+
+foreach (var item in list)
+{
+    Predict();
+    //compare current element with prediction of previous element
+    if(item == Int32.Parse(prediction.Last()))
+    {
+        matchCount++;
+    }
+    predictions++;
+    accuracy = (double)matchCount / predictions * 100;
+}
+```
+
+Observe that there is no prediction code.
+
+## How to run the project
+
+### To produce a synthetic dataset
+
+1. First, open the [sln](../../../NeoCortexApi.sln) and choose the `MultiSequenceLearning` as startup project.
+
+2. The `Main()` is located in `Program.cs`. To generate a synthetic dataset, remove the comments from the code below.
+
+```csharp
+//to create a synthetic dataset
+string path = HelperMethods.SaveDataset(HelperMethods.CreateDataset());
+Console.WriteLine($"Dataset saved: {path}");
+```
+
+*And comment the remaining lines*.
+
