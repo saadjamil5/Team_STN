@@ -262,3 +262,35 @@ Console.WriteLine($"Dataset saved: {path}");
 
 *And comment the remaining lines*.
 
+3. Run to create the dataset and save the path of the dataset folder and name.
+
+![dataset](./images/dataset.jpg)
+
+### To run the experiment
+
+1. Select `MultiSequenceLearning} as the startup project when you open [NeoCortexApi.sln](../../../NeoCortexApi.sln).
+
+2. The `Main()` is located in `Program.cs`. As you can see below, rename the `dataset` file that was saved from the last run:
+
+```csharp
+//to read dataset
+string BasePath = AppDomain.CurrentDomain.BaseDirectory;
+string datasetPath = Path.Combine(BasePath, "dataset", "dataset_03.json"); //edit name of dataset here
+Console.WriteLine($"Reading Dataset: {datasetPath}");
+List<Sequence> sequences = HelperMethods.ReadDataset(datasetPath);
+```
+
+additionally, *copy the [test data](../dataset/TestDatasets1.json) to the folder*
+(`{BASEPATH}\neocortexapi\source\MySEProject\MultiSequenceLearning\bin\Debug\net6.0\dataset`).
+
+## Results
+We have used a range of datasets to do as much experimentation as is practical. We purposely kept the dataset sizes small and the sequence lengths short in order to account for the significant execution time.
+![results](./images/result.png)
+
+## Reference
+
+- Forked from [ddobric/neocortexapi](https://github.com/ddobric/neocortexapi)
+
+- [Numenta Research Publication](https://www.numenta.com/resources/research-publications/) 
+
+- [Machine Learning Guide to HTM](https://www.numenta.com/blog/2019/10/24/machine-learning-guide-to-htm/)
