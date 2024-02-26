@@ -113,6 +113,76 @@ namespace MultiSequenceLearning
 
             return sequence;
         }
+        /// <summary>
+        /// Creates list of Sequence as per configuration
+        /// </summary>
+        /// <returns>Object of list of Sequence</returns>
+        public static List<Sequence> CreateDataset()
+        {
+            int numberOfSequence = 30;
+            int size = 12;
+            int startVal = 0;
+            int endVal = 15;
+            Console.WriteLine("Creating Sequence...");
+            List<Sequence> sequence = HelperMethods.CreateSequences(numberOfSequence, size, startVal, endVal);
+
+            return sequence;
+        }
+
+        /// <summary>
+        /// Saves the dataset in 'dataset' folder in BasePath of application
+        /// </summary>
+        /// <param name="sequences">Object of list of Sequence</param>
+        /// <returns>Full path of the dataset</returns>
+        public static string SaveDataset(List<Sequence> sequences)
+        {
+            string BasePath = AppDomain.CurrentDomain.BaseDirectory;
+            string reportFolder = Path.Combine(BasePath, "dataset");
+            if (!Directory.Exists(reportFolder))
+                Directory.CreateDirectory(reportFolder);
+            string reportPath = Path.Combine(reportFolder, $"dataset_{DateTime.Now.Ticks}.json");
+
+            Console.WriteLine("Saving dataset...");
+
+            if (!File.Exists(reportPath))
+            {
+                using (StreamWriter sw = File.CreateText(reportPath))
+                {
+                    /*sw.WriteLine("name, data");
+                    foreach (Sequence sequence in sequences)
+                    {
+                        sw.WriteLine($"{sequence.name}, {string.Join(",", sequence.data)}");
+                    }*/
+                    //sw.WriteLine(System.Text.Json.JsonSerializer.Serialize<List<Sequence>>(sequences));
+                    sw.WriteLine(JsonConvert.SerializeObject(sequences));
+                }
+            }
+
+            return reportPath;
+        }
+
+        /// <summary>
+        /// Creats multiple sequences as per parameters
+        /// </summary>
+        /// <param name="count">Number of sequences to be created</param>
+        /// <param name="size">Size of each sequence</param>
+        /// <param name="startVal">Minimum value of item in a sequence</param>
+        /// <param name="stopVal">Maximum value of item in a sequence</param>
+        /// <returns>Object of list of Sequence</returns>
+        public static List<Sequence> CreateSequences(int count, int size, int startVal, int stopVal)
+        {
+            List<Sequence> dataset = new List<Sequence>();
+
+            for (int i = 0; i < count; i++)
+            {
+                Sequence sequence = new Sequence();
+                sequence.name = $"S{i + 1}";
+                sequence.data = getSyntheticData(size, startVal, stopVal);
+                dataset.Add(sequence);
+            }
+
+            return dataset;
+        }
 
         /// <summary>
         /// Takes in user input and return encoded SDR for prediction
