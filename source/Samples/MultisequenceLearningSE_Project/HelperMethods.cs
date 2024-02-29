@@ -184,67 +184,7 @@ namespace MultiSequenceLearning
             return dataset;
         }
 
-        /// <summary>
-        /// Takes in user input and return encoded SDR for prediction
-        /// </summary>
-        /// <param name="userInput"></param>
-        /// <returns></returns>
-        public static int[] EncodeSingleInput(string userInput)
-        {
-            int[] sdr = new int[0];
-
-            //needs no implementation
-
-            return sdr;
-        }
-
-        /// <summary>
-        /// Get the encoder with settings
-        /// </summary>
-        /// <param name="inputBits">input bits</param>
-        /// <returns>Object of EncoderBase</returns>
-        public static EncoderBase GetEncoder(int inputBits)
-        {
-            double max = 20;
-
-            Dictionary<string, object> settings = new Dictionary<string, object>()
-            {
-                { "W", 15},
-                { "N", inputBits},
-                { "Radius", -1.0},
-                { "MinVal", 0.0},
-                { "Periodic", false},
-                { "Name", "scalar"},
-                { "ClipInput", false},
-                { "MaxVal", max}
-            };
-
-            EncoderBase encoder = new ScalarEncoder(settings);
-
-            return encoder;
-        }
-
-        /// <summary>
-        /// Reads dataset from the file
-        /// </summary>
-        /// <param name="path">full path of the file</param>
-        /// <returns>Object of list of Sequence</returns>
-        public static List<Sequence> ReadDataset(string path)
-        {
-            Console.WriteLine("Reading Sequence...");
-            String lines = File.ReadAllText(path);
-            //var sequence = JsonConvert.DeserializeObject(lines);
-            List<Sequence> sequence = System.Text.Json.JsonSerializer.Deserialize<List<Sequence>>(lines);
-
-            return sequence;
-        }
-        /// <summary>
-        /// Creates a sequence of given size-3 and range
-        /// </summary>
-        /// <param name="size">Size of list</param>
-        /// <param name="startVal">Min range of the list</param>
-        /// <param name="stopVal">Max range of the list</param>
-        /// <returns></returns>
+       
         private static int[] getSyntheticData(int size, int startVal, int stopVal)
         {
             int[] data = new int[size];
@@ -328,4 +268,5 @@ namespace MultiSequenceLearning
                 return 2;
             }
         }
+    }
 }
