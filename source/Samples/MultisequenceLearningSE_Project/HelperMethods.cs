@@ -183,5 +183,90 @@ namespace MultiSequenceLearning
 
             return dataset;
         }
+
+       
+        private static int[] getSyntheticData(int size, int startVal, int stopVal)
+        {
+            int[] data = new int[size];
+
+            data = randomRemoveDouble(randomDouble(size, startVal, stopVal), 3);
+
+            return data;
+        }
+
+        /// <summary>
+        /// Creates a sorted list of array with given paramerters
+        /// </summary>
+        /// <param name="size">Size of array</param>
+        /// <param name="startVal">Min range of the list</param>
+        /// <param name="stopVal">Max range of the list</param>
+        /// <returns></returns>
+        private static int[] randomDouble(int size, int startVal, int stopVal)
+        {
+            int[] array = new int[size];
+            List<int> list = new List<int>();
+            int number = 0;
+            Random r = new Random(Guid.NewGuid().GetHashCode());
+            while (list.Count < size)
+            {
+                number = r.Next(startVal, stopVal);
+                if (!list.Contains(number))
+                {
+                    if (number >= startVal && number <= stopVal)
+                        list.Add(number);
+                }
+            }
+
+            array = list.ToArray();
+            Array.Sort(array);
+
+            return array;
+        }
+
+        /// <summary>
+        /// Randomly remove less number of items from array
+        /// </summary>
+        /// <param name="array">array to processed</param>
+        /// <param name="less">number of removals to be done</param>
+        /// <returns>array with less numbers</returns>
+        private static int[] randomRemoveDouble(int[] array, int less)
+        {
+            int[] temp = new int[array.Length - less];
+            Random random = new Random(Guid.NewGuid().GetHashCode());
+            int number = 0;
+            List<int> list = new List<int>();
+
+            while (list.Count < (array.Length - less))
+            {
+                number = array[random.Next(0, (array.Length))];
+                if (!list.Contains(number))
+                    list.Add(number);
+            }
+
+            temp = list.ToArray();
+            Array.Sort(temp);
+
+            return temp;
+        }
+
+        private static int getDigits(int n)
+        {
+            if (n >= 0)
+            {
+                if (n < 100) return 2;
+                if (n < 1000) return 3;
+                if (n < 10000) return 4;
+                if (n < 100000) return 5;
+                if (n < 1000000) return 6;
+                if (n < 10000000) return 7;
+                if (n < 100000000) return 8;
+                if (n < 1000000000) return 9;
+                return 10;
+            }
+            else
+            {
+                return 2;
+            }
+        }
     }
 }

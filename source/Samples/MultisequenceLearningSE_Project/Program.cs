@@ -33,10 +33,50 @@ namespace MultiSequenceLearning
             Console.WriteLine($"Reading Testset: {testsetPath}");
             List<Sequence> sequencesTest = HelperMethods.ReadDataset(testsetPath);
 
-            //run learing only
-            RunSimpleMultiSequenceLearningExperiment(sequences);
-
+          //run learning + prediction and generates report for results
             List<Report> reports = RunMultiSequenceLearningExperiment(sequences, sequencesTest);
+
+            WriteReport(sequences, reports);
+
+            Console.WriteLine("Done...");
+
+        }
+
+         /// <summary>
+        /// write and formats data in report object to a file
+        /// </summary>
+        /// <param name="sequences">input sequence</param>
+        /// <param name="reports">object of report</param>
+        private static void WriteReport(List<Sequence> sequences, List<Report> reports)
+        {
+            string BasePath = AppDomain.CurrentDomain.BaseDirectory;
+            string reportFolder = Path.Combine(BasePath, "report");
+            if (!Directory.Exists(reportFolder))
+                Directory.CreateDirectory(reportFolder);
+            string reportPath = Path.Combine(reportFolder, $"report_{DateTime.Now.Ticks}.txt");
+
+            if (!File.Exists(reportPath))
+            {
+                using (StreamWriter sw = File.CreateText(reportPath))
+                {
+                    sw.WriteLine("------------------------------");
+                    foreach (Sequence sequence in sequences)
+                    {
+                        sw.WriteLine($"Sequence: {sequence.name} -> {string.Join("-",sequence.data)}");
+                    }
+                    sw.WriteLine("------------------------------");
+                    foreach (Report report in reports)
+                    {
+                        sw.WriteLine($"Using test sequence: {report.SequenceName} -> {string.Join("-",report.SequenceData)}");
+                        foreach (string log in report.PredictionLog)
+                        {
+                            sw.WriteLine($"\t{log}");
+                        }
+                        sw.WriteLine($"\tAccuracy: {report.Accuracy}%");
+                        sw.WriteLine("------------------------------");
+                    }
+                }
+            }
 
         }
 
