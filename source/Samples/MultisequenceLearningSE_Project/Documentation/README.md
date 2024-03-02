@@ -285,7 +285,7 @@ additionally, *copy the [test data](../dataset/TestDatasets1.json) to the folder
 
 ## Results
 We have used a range of datasets to do as much experimentation as is practical. We purposely kept the dataset sizes small and the sequence lengths short in order to account for the significant execution time.
-![results](./images/result.png)
+![results](./images/Result.jpeg)
 
 ## Reference
 
