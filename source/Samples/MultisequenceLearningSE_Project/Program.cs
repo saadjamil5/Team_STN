@@ -121,6 +121,14 @@ namespace MultiSequenceLearning
             return reports;
 
         }
+
+            /// <summary>
+        /// Takes predicted model, subsequence and generates report stating accuracy
+        /// </summary>
+        /// <param name="predictor">Object of Predictor</param>
+        /// <param name="list">sub-sequence to be tested</param>
+        /// <returns>accuracy of predicting elements in %</returns>
+        
         private static double PredictNextElement(Predictor predictor, int[] list, Report report)
         {
             int matchCount = 0;
