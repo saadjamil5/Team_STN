@@ -184,7 +184,13 @@ namespace MultiSequenceLearning
             return dataset;
         }
 
-       
+         /// <summary>
+        /// Creates a sequence of given size-3 and range
+        /// </summary>
+        /// <param name="size">Size of list</param>
+        /// <param name="startVal">Min range of the list</param>
+        /// <param name="stopVal">Max range of the list</param>
+        /// <returns></returns>
         private static int[] getSyntheticData(int size, int startVal, int stopVal)
         {
             int[] data = new int[size];
