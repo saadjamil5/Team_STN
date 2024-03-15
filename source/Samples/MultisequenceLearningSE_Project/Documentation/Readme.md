@@ -7,7 +7,7 @@ In this project, we attempted to build new ways using the 'MultisequenceLearning
 
 ![image](./images/overview.png)
 
-Fig: Design of Approve Prediction of Multisequence Learning
+Fig: Architecture of Approve Prediction of Multisequence Learning
 
 Above our project's implementation flow.
 
