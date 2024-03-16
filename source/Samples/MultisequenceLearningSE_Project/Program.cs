@@ -24,7 +24,7 @@ namespace MultiSequenceLearning
 
             //to read dataset
             string BasePath = AppDomain.CurrentDomain.BaseDirectory;
-            string datasetPath = Path.Combine(BasePath, "dataset", "dataset_03.json");
+            string datasetPath = Path.Combine(BasePath, "dataset", "dataset_04.json");
             Console.WriteLine($"Reading Dataset: {datasetPath}");
             List<Sequence> sequences = HelperMethods.ReadDataset(datasetPath);
 
