@@ -264,7 +264,7 @@ Console.WriteLine($"Dataset saved: {path}");
 
 3. Run to create the dataset and save the path of the dataset folder and name.
 
-![dataset](./images/dataset.jpeg)
+![dataset](./images/datasets.PNG)
 
 ### To run the experiment
 
@@ -285,7 +285,7 @@ additionally, *copy the [test data](../dataset/TestDatasets1.json) to the folder
 
 ## Results
 We have used a range of datasets to do as much experimentation as is practical. We purposely kept the dataset sizes small and the sequence lengths short in order to account for the significant execution time.
-![results](./images/Result.jpeg)
+![results](./images/Result(3).jpeg)
 
 ## Reference
 
