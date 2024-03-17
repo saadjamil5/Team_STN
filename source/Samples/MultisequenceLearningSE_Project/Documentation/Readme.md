@@ -264,7 +264,7 @@ Console.WriteLine($"Dataset saved: {path}");
 
 3. Run to create the dataset and save the path of the dataset folder and name.
 
-![dataset](./images/dataset.jpeg)
+![dataset](./images/datasets.PNG)
 
 ### To run the experiment
 
