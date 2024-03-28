@@ -92,6 +92,15 @@ namespace MultiSequenceLearning
             var predictor = experiment.Run(sequences);
         }
 
+        /// <summary>
+        /// This example demonstrates how to learn two sequences and how to use the prediction mechanism.
+        /// First, two sequences are learned.
+        /// Second, three short sequences with three elements each are created und used for prediction. The predictor used by experiment privides to the HTM every element of every predicting sequence.
+        /// The predictor tries to predict the next element.
+        /// </summary>
+        /// <param name="sequences">input dataset</param>
+        /// <param name="sequencesTest">input test dataset</param>
+        /// <returns>list of Report per sequence</returns>
         private static List<Report> RunMultiSequenceLearningExperiment(List<Sequence> sequences, List<Sequence> sequencesTest)
         {
             List<Report> reports = new List<Report>();
