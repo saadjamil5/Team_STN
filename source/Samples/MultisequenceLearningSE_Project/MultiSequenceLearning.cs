@@ -41,7 +41,10 @@ namespace MultiSequenceLearning
 
             return RunExperiment(inputBits, cfg, encoder, sequences);
         }
-
+        
+         /// <summary>
+        /// Run an experiment to train an HTM model using input sequences and evaluates its performance based on accuracy and stability criteria.
+        /// </summary>
         private Predictor RunExperiment(int inputBits, HtmConfig cfg, EncoderBase encoder, List<Sequence> sequences)
         {
             Stopwatch sw = new Stopwatch();
